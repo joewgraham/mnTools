@@ -1,0 +1,33 @@
+# Standardization file for v_e_moto6.swc created with SwcStd version 1.211 by Duncan Donohue on 9/6/05.
+# Edited SWC file saved as v_e_moto6.swc.CNG.swc.  See SwcStd1.21.doc for more information.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 18 at 5.385 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  135.0  18.0  -96.1909
+4.3  Radius of line 532 at 5.53 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -38.0  -1.0  64.0
+4.2  Radius of line 891 at 0.05 <= 0.05.  (no action taken)
+     B1      X, Y, Z:  -718.0  493.0  -417.494
+4.3  Radius of line 902 at 6.565 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -34.0  65.0  -82.4567
+4.5  Radius of terminal line 913 at 1.125 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -352.0  669.0  -45.4833
+4.3  Radius of line 1023 at 7.345 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  2.0  -85.0  -123.906
+4.4  Line 360 of rad 0.935 links to 354 of rad 0.325.  (no action taken)
+     B1      X, Y, Z:  -838.0  77.0  42.0
+4.4  Line 505 of rad 0.47 links to 504 of rad 0.225.  (no action taken)
+     B1      X, Y, Z:  662.0  -505.0  525.195
+4.4  Line 660 of rad 3.655 links to 659 of rad 1.53.  (no action taken)
+     B1      X, Y, Z:  171.0  336.0  -506.0
+2.1  Line 1 has 11 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+
+
+Number of type A irregularities = 0
+Number of type B1 irregularities = 10
+Number of type B2 irregularities = 0
+Number of type C irregularities = 0

@@ -1,0 +1,21 @@
+# Standardization file for v_e_moto3.swc created with SwcStd version 1.211 by Duncan Donohue on 9/6/05.
+# Edited SWC file saved as v_e_moto3.swc.CNG.swc.  See SwcStd1.21.doc for more information.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 86 at 5.43 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -50.0  -31.0  -18.2636
+4.3  Radius of line 87 at 5.565 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -59.0  -44.0  -9.6613
+4.3  Radius of line 450 at 4.105 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  23.0  -16.0  -150.0
+2.1  Line 1 has 12 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+
+
+Number of type A irregularities = 0
+Number of type B1 irregularities = 4
+Number of type B2 irregularities = 0
+Number of type C irregularities = 0

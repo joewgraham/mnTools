@@ -1,0 +1,21 @@
+# Standardization file for v_e_moto4.CNG.swc created with StdSwc version 1.211 by Duncan Donohue on 9/21/05.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     ordinates
+#
+4.3  Radius of line 207 at 3.875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -69.0  -17.0  75.0
+4.3  Radius of line 455 at 3.875 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -72.0  77.0  0.0
+4.3  Radius of line 592 at 5.615 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -39.0  -31.0  -6.9350
+4.3  Radius of line 625 at 5.75 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -53.0  -39.0  -28.59
+4.3  Radius of line 765 at 4.01 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  28.0  82.0  -52.48
+4.3  Radius of line 791 at 4.545 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  48.0  105.0  -75.0
+2.1  Line 1 has 8 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+ 

@@ -1,0 +1,19 @@
+# Standardization file for v_e_moto5.CNG.swc created with StdSwc version 1.211 by Duncan Donohue on 9/21/05.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     ordinates
+#
+4.5  Radius of terminal line 351 at 4.635 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  20.0  -21.0  -71.76
+4.3  Radius of line 590 at 6.625 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  6.0  -69.0  -75.0
+4.3  Radius of line 623 at 6.36 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  11.0  -94.0  -75.0
+2.4  Length of segment ending at point 281 >= 6.0 stdevs above mean at 719.595.  (no action taken)
+     B1      X, Y, Z:  -464.0  -164.0  525.0
+2.4  Length of segment ending at point 283 >= 6.0 stdevs above mean at 912.5103.  (no action taken)
+     B1      X, Y, Z:  -569.0  -483.0  525.0
+2.1  Line 1 has 15 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+ 

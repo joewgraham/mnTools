@@ -1,0 +1,17 @@
+# Standardization file for v_e_moto2.swc created with SwcStd version 1.211 by Duncan Donohue on 9/6/05.
+# Edited SWC file saved as v_e_moto2.swc.CNG.swc.  See SwcStd1.21.doc for more information.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.3  Radius of line 304 at 6.095 >= 5.0 stdevs above the mean.  (no action taken)
+     B1      X, Y, Z:  -10.0  -23.0  -60.887
+2.1  Line 1 has 13 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+
+
+Number of type A irregularities = 0
+Number of type B1 irregularities = 2
+Number of type B2 irregularities = 0
+Number of type C irregularities = 0
