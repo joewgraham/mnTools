@@ -38,8 +38,8 @@ if strcmp(option.mnanalyzer.doublebin3,'y')
 end
 	
 cd(mnpop.datapathname);
-dataname     = sprintf('%s_data',mnpop.inputfilename);
-analysisname = sprintf('%s_analysis',mnpop.inputfilename);
+dataname     = sprintf('%s_data',mnpop.input.filename);
+analysisname = sprintf('%s_analysis',mnpop.input.filename);
 
 assignin('caller',dataname,data);
 assignin('caller',analysisname,analysis);
@@ -54,12 +54,12 @@ end
 if strcmp(option.mnanalyzer.save.data,'n') ~= 1
     eval([dataname '=data;']);
 	disp('   Saving analysis data.')
-    save(sprintf('%s_%s_%s',mnpop.inputfilename,mnpop.datetime,'data.mat'),dataname,'-v7.3');
+    save(sprintf('%s_%s_%s',mnpop.input.filename,mnpop.datetime,'data.mat'),dataname,'-v7.3');
 end
 if strcmp(option.mnanalyzer.save.analysis,'n') ~= 1
     eval([analysisname '=analysis;']);
 	disp('   Saving analysis.')
-    save(sprintf('%s_%s_%s',mnpop.inputfilename,mnpop.datetime,'analysis.mat'),analysisname,'-v7.3');
+    save(sprintf('%s_%s_%s',mnpop.input.filename,mnpop.datetime,'analysis.mat'),analysisname,'-v7.3');
 end
 
 cd(mnhome);

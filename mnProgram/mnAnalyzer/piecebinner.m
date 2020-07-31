@@ -6,7 +6,7 @@ mnoptions;
 
 data.datapathname                              = mnpop.datapathname;
 data.datetime                                  = mnpop.datetime;
-data.inputfilename                             = mnpop.inputfilename;
+data.inputfilename                             = mnpop.input.filename;
 data.binsettings.axon.distancebinwidth         = option.axon.distancebinwidth;
 data.binsettings.axon.branchlengthbinwidth     = option.axon.branchlengthbinwidth;
 data.binsettings.axon.diameterbinbreaks        = option.axon.diameterbinbreaks;
@@ -22,7 +22,7 @@ data.binsettings.apical.diameterbinwidths      = option.apical.diameterbinwidths
 
 analysis.datapathname                              = mnpop.datapathname;
 analysis.datetime                                  = mnpop.datetime;
-analysis.inputfilename                             = mnpop.inputfilename;
+analysis.inputfilename                             = mnpop.input.filename;
 analysis.binsettings.axon.distancebinwidth         = option.axon.distancebinwidth;
 analysis.binsettings.axon.branchlengthbinwidth     = option.axon.branchlengthbinwidth;
 analysis.binsettings.axon.diameterbinbreaks        = option.axon.diameterbinbreaks;

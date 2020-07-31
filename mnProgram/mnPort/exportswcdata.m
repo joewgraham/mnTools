@@ -29,7 +29,7 @@ for mnnum = 1:length(mnpop.mn)
     
     fprintf(fid,'%s\n','# Header Information for File');
     
-    fprintf(fid,'%.0f %.0f %.3f %.3f %.3f %.3f %.0f\n',1,1,mnpop.mn(mnnum).xposition,mnpop.mn(mnnum).yposition,mnpop.mn(mnnum).zposition,mnpop.mn(mnnum).somadiameter/2,-1);
+    fprintf(fid,'%.0f %.0f %.3f %.3f %.3f %.3f %.0f\n',1,1,mnpop.mn(mnnum).xposition,mnpop.mn(mnnum).yposition,mnpop.mn(mnnum).zposition,mnpop.mn(mnnum).soma.diameter/2,-1);
     
     linenumber = 1;
     
