@@ -217,7 +217,7 @@ for mnnum=1:mnpop.numbercells
             
             % Determine distances from soma centroid
             if strcmp(input.soma.shape,'spherical')
-                currenttype.trunk.distancefromcentroid = (mnpop.mn(mnnum).soma.diameter/2) * ones(currenttype.trunk.number,1);
+                currenttype.trunk.distancefromcentroid = (mnpop.mn(mnnum).soma.diameter/2);  %* ones(currenttype.trunk.number,1);
             elseif strcmp(input.soma.shape,'pyramidal')
                 currenttype.trunk.distancefromcentroid = distancesfromcentroidfunction(typeinput,currenttype.trunk.number,mnpop.mn(mnnum).soma);
             else
@@ -226,26 +226,23 @@ for mnnum=1:mnpop.numbercells
             end
             
             %% Determine the centroid-to-trunk elevations and azimuths
-            %[currenttype.trunk.elevationfromcentroid, ...
-            % currenttype.trunk.azimuthfromcentroid]    = directionsfromcentroidfunction(typeinput,currenttype.trunk.number);
+            [currenttype.trunk.elevationfromcentroid, ...
+             currenttype.trunk.azimuthfromcentroid]    = directionsfromcentroidfunction(typeinput,currenttype.trunk.number);
             
             %% Assign the proximal positions of the trunk
-            %for trunknum = 1:currenttype.trunk.number
-            %    [currenttype.trunk.xdirectionfromcentroid(trunknum), ...
-            %     currenttype.trunk.ydirectionfromcentroid(trunknum), ...
-            %     currenttype.trunk.zdirectionfromcentroid(trunknum)]      = directionfunction(currenttype.trunk.elevationfromcentroid(trunknum),currenttype.trunk.azimuthfromcentroid(trunknum));
-            %    currenttype.trunk.proximalxposition(trunknum) = mnpop.mn(mnnum).xposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.xdirectionfromcentroid(trunknum);
-            %    currenttype.trunk.proximalyposition(trunknum) = mnpop.mn(mnnum).yposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.ydirectionfromcentroid(trunknum);
-            %    currenttype.trunk.proximalzposition(trunknum) = mnpop.mn(mnnum).zposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.zdirectionfromcentroid(trunknum);
-            %end
+            for trunknum = 1:currenttype.trunk.number
+                [currenttype.trunk.xdirectionfromcentroid(trunknum), ...
+                 currenttype.trunk.ydirectionfromcentroid(trunknum), ...
+                 currenttype.trunk.zdirectionfromcentroid(trunknum)]      = directionfunction(currenttype.trunk.elevationfromcentroid(trunknum),currenttype.trunk.azimuthfromcentroid(trunknum));
+
+                currenttype.trunk.proximalxposition(trunknum) = mnpop.mn(mnnum).xposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.xdirectionfromcentroid(trunknum);
+                currenttype.trunk.proximalyposition(trunknum) = mnpop.mn(mnnum).yposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.ydirectionfromcentroid(trunknum);
+                currenttype.trunk.proximalzposition(trunknum) = mnpop.mn(mnnum).zposition + currenttype.trunk.distancefromcentroid * currenttype.trunk.zdirectionfromcentroid(trunknum);
+            end
             
             %% Determine the directions of the trunks
-            %[currenttype.trunk.elevation, ...
-            % currenttype.trunk.azimuth] = trunkdirectionsfunction(typeinput,currenttype.trunk);
-            
-            %%%% 
-            [primarydendriteelevation,primarydendriteazimuth] = primarydendritedirectionsfunction(currenttype.trunk.number)
-            %%%%
+            [currenttype.trunk.elevation, ...
+             currenttype.trunk.azimuth] = trunkdirectionsfunction(typeinput,currenttype.trunk);
 
             % --------------------------------------------------------------------
             % Determine the diameters of the trunks
@@ -255,7 +252,7 @@ for mnnum=1:mnpop.numbercells
                 currenttype.trunk.diameters = typeinput.trunkdiameter.preset{mnnum};
             else
                 %currenttype.trunk.diameters = trunkdiametersfunction(typeinput,currenttype.trunk,mnpop.mn(mnnum).soma);
-                currenttype.trunk.diameters = primarydendritediametersfunction(currenttype.trunk.number, typeinput.trunkdiameter)
+                currenttype.trunk.diameters = primarydendritediametersfunction(currenttype.trunk.number, typeinput.trunkdiameter);
             end
             
             
@@ -266,9 +263,9 @@ for mnnum=1:mnpop.numbercells
             for pdnum=1:currenttype.trunk.number
                 disp(sprintf('     %s trunk number: %.0f',piecetitles{piecetype},pdnum));
                 
-%                 [currenttype.trunkxdirection(pdnum), ...
-%                     currenttype.trunkydirection(pdnum), ...
-%                     currenttype.trunkzdirection(pdnum)]       = directionfunction(currenttype.trunkelevation(pdnum),currenttype.trunkazimuth(pdnum));
+                 [currenttype.trunkxdirection(pdnum), ...
+                     currenttype.trunkydirection(pdnum), ...
+                     currenttype.trunkzdirection(pdnum)]       = directionfunction(currenttype.trunk.elevation(pdnum),currenttype.trunk.azimuth(pdnum));
                 
                 % ----------------------------------------------------------------
                 % Generate branches until a termination is reached, then back up
