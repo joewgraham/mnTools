@@ -125,7 +125,7 @@ fieldorder{53} = 'daughter2ydirection';
 fieldorder{54} = 'daughter2zdirection';
 
 mnpop.datetime       = datestr(now, 'yyyy-mm-dd_HH-MM');
-mnpop.inputfilename  = inputfilename;
+mnpop.input.filename  = inputfilename;
 mnpop.importpathname = cd;
 mnpop.importfilename = importfilename;
 mnpop.numbercells    = numbermns;
