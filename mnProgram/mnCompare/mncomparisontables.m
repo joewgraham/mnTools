@@ -8,13 +8,16 @@ disp('  ------------------------------------');
 disp('   Generating ...');
 
 disp('    Summary Table.');
-summarytable(controlanalysis,testanalysis);
+try summarytable(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce table.'); end
 
-%disp('    Primary Dendrite Table.');
-%primarydendritetable(controlanalysis,testanalysis);
+disp('    Primary Dendrite Table.');
+try primarydendritetable(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce table.'); end
 
-%disp('    Branch Order Table.');
-%branchordertable(controlanalysis,testanalysis);
+disp('    Branch Order Table.');
+try branchordertable(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce table.'); end
 
 
 disp('  ------------------------------------');

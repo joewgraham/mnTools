@@ -16,117 +16,171 @@ disp('  ------------------------------------');
 disp('   Generating ...');
 
 disp('     Parameter Distribution Figures.');
-parameterdistributionfigures(controlanalysis,testanalysis);
-%parameterdistributionboxplots(controlanalysis,testanalysis);
-diameterhistogram(controlanalysis,testanalysis);
-branchbiftermprobfigure(controlanalysis,testanalysis);
-biftermprobfigures(controlanalysis,testanalysis);
-%inputparameterfigures(controlanalysis,testanalysis);
+try parameterdistributionfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try parameterdistributionboxplots(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try diameterhistogram(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try branchbiftermprobfigure(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermprobfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try inputparameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
-% disp('     Branching Parameters Figures.');
-% branchingfigures(controlanalysis,testanalysis);
-% close all;
+disp('     Branching Parameters Figures.');
+try branchingfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
 
-% disp('     Diameter Figures.');
-% diameterfigures(controlanalysis,testanalysis);
-% close all;
-% 
-% disp('     Taper Rate Figures.');
-% taperratefigures(controlanalysis,testanalysis);
-% close all;
-% 
-% disp('     Rall Ratio Figures.');
-% rallratiofigures(controlanalysis,testanalysis);
-% close all;
-% 
-% disp('     Parent/Daughter Ratio Figures.');
-% parentdaughterratiofigures(controlanalysis,testanalysis);
-% close all;
-% 
-% disp('     Daughter Ratio Figures.');
-% daughterratiofigures(controlanalysis,testanalysis);
-% close all;
-% 
-% disp('     Branch Probability Figures.');
-% biftermprobfigures(controlanalysis,testanalysis);
-% close all;
+disp('     Diameter Figures.');
+try diameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
+
+disp('     Taper Rate Figures.');
+try taperratefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
+
+disp('     Rall Ratio Figures.');
+try rallratiofigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
+
+disp('     Parent/Daughter Ratio Figures.');
+try parentdaughterratiofigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
+
+disp('     Daughter Ratio Figures.');
+try daughterratiofigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
+
+disp('     Branch Probability Figures.');
+try biftermprobfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+close all;
 
 disp('     Morphometrics Figures ');
 
-%allbiftermfigures(controlanalysis,testanalysis);
-%allbiftermfigure2s(controlanalysis,testanalysis);
-
+try allbiftermfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try allbiftermfigure2s(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 
 disp('       vs Soma Diameter.');
-somadiameterfigures(controlanalysis,testanalysis);
+try somadiameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Primary Dendrite Diameter.');
-primarydendritefigures(controlanalysis,testanalysis);
-%primarydendritefigures_cyl(controlanalysis,testanalysis);
+try primarydendritefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try primarydendritefigures_cyl(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Local Diameter.');
-% vsdiameterfigures(controlanalysis,testanalysis);
-% vsdiameterfiguressemilog(controlanalysis,testanalysis);
-% vsdiameterfiguresloglog(controlanalysis,testanalysis);
-% vsdiameter2figures(controlanalysis,testanalysis);
-% vsdiameter2figuressemilog(controlanalysis,testanalysis);
-% vsdiameter2figuresloglog(controlanalysis,testanalysis);
-biftermdiameterfigures(controlanalysis,testanalysis);
-biftermdiameterfiguressemilogx(controlanalysis,testanalysis);
-biftermdiameterfiguressemilogy(controlanalysis,testanalysis);
-biftermdiameterfiguresloglog(controlanalysis,testanalysis);
-bifdiameterfigures(controlanalysis,testanalysis);
-bifdiameterfiguressemilogx(controlanalysis,testanalysis);
-bifdiameterfiguressemilogy(controlanalysis,testanalysis);
-bifdiameterfiguresloglog(controlanalysis,testanalysis);
+try vsdiameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try vsdiameterfiguressemilog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try vsdiameterfiguresloglog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try vsdiameter2figures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try vsdiameter2figuressemilog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try vsdiameter2figuresloglog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdiameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdiameterfiguressemilogx(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdiameterfiguressemilogy(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdiameterfiguresloglog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifdiameterfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifdiameterfiguressemilogx(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifdiameterfiguressemilogy(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifdiameterfiguresloglog(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 
-%biftermdiametertaperfigures(controlanalysis,testanalysis);
+try biftermdiametertaperfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 
-
-piecetaperratefigures(controlanalysis,testanalysis);
-piecerallratiofigures(controlanalysis,testanalysis);
-piecedaughterratiofigures(controlanalysis,testanalysis);
-cablefigures(controlanalysis,testanalysis);
+try piecetaperratefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try piecerallratiofigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try piecedaughterratiofigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try cablefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 
 close all;
 
-
 disp('       vs Branch Order.');
-%branchorderfigures(controlanalysis,testanalysis);
-biftermbranchorderfigures1(controlanalysis,testanalysis);
-biftermbranchorderfigures2(controlanalysis,testanalysis);
-bifbranchorderfigures(controlanalysis,testanalysis);
-%biftermbranchordertaperfigures(controlanalysis,testanalysis);
+try branchorderfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermbranchorderfigures1(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermbranchorderfigures2(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifbranchorderfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermbranchordertaperfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Degree.');
-%degreefigures(controlanalysis,testanalysis);
-biftermdegreefigures1(controlanalysis,testanalysis);
-biftermdegreefigures2(controlanalysis,testanalysis);
-bifdegreefigures(controlanalysis,testanalysis);
+try degreefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdegreefigures1(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermdegreefigures2(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifdegreefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Path Length from Soma.');
-%pathlengthfigures(controlanalysis,testanalysis);
-biftermpathlengthfigures(controlanalysis,testanalysis);
-bifpathlengthfigures(controlanalysis,testanalysis);
-%biftermpathlengthtaperfigures(controlanalysis,testanalysis);
+try pathlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermpathlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifpathlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermpathlengthtaperfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Radial Distance from Soma.');
-%radialdistancefigures(controlanalysis,testanalysis);
-biftermradialdistancefigures(controlanalysis,testanalysis);
-bifradialdistancefigures(controlanalysis,testanalysis);
+try radialdistancefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermradialdistancefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifradialdistancefigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 disp('       vs Branch Length.');
-%pathlengthfigures(controlanalysis,testanalysis);
-biftermbranchlengthfigures(controlanalysis,testanalysis);
-bifbranchlengthfigures(controlanalysis,testanalysis);
-%biftermbranchlengthtaperfigures(controlanalysis,testanalysis);
+try pathlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermbranchlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try bifbranchlengthfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
+try biftermbranchlengthtaperfigures(controlanalysis,testanalysis);
+catch exception; disp('       Failed to produce figure.'); end
 close all;
 
 

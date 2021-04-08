@@ -20,242 +20,312 @@ disp('   Generating ...');
 if nargin == 1
     disp('     Parameter Distribution Figures.');
     %01
-    parameterdistributionfigures(controlanalysis);
+    try parameterdistributionfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %03
-    try
-        segmentnumberhistograms(controlanalysis);
-    catch error
-        error
-    end
+    try segmentnumberhistograms(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %04
-    branchtypeprobfigures(controlanalysis);
+    try branchtypeprobfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %05(1-3)
-    branchendingprobfigures(controlanalysis);
+    try branchendingprobfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    branchendingprobfigures_bif(controlanalysis);
+    try branchendingprobfigures_bif(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %05(4-6)
-    %burkebranchendingprobfigures(controlanalysis);
+    try burkebranchendingprobfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('     Morphometrics Figures ');
     disp('       vs Soma Diameter.');
     %06
-    somadiameterfigures(controlanalysis);
-    somacsafigures(controlanalysis);
-    somavolumefigures(controlanalysis);
+    try somadiameterfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
+    try somacsafigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
+    try somavolumefigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %07
     disp('       vs Primary Dendrite Diameter.');
-    centroidtotrunkdirectionhistograms(controlanalysis);
+    try centroidtotrunkdirectionhistograms(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunksizefigures(controlanalysis);
+    try trunksizefigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdistancefigures(controlanalysis);
+    try trunkdistancefigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkpositionfigures(controlanalysis);
+    try trunkpositionfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures(controlanalysis);
+    try trunkdirectionfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionhistograms(controlanalysis);
+    try trunkdirectionhistograms(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures2(controlanalysis);
+    try trunkdirectionfigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures3(controlanalysis);
+    try trunkdirectionfigures3(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Local Diameter.');
     %08
-    diameterfigures1(controlanalysis);
+    try diameterfigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %09
-    diameterfigures2(controlanalysis);
+    try diameterfigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Path Length from Soma.');
     %10
-    pathlengthfigures1(controlanalysis);
+    try pathlengthfigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %11
-    pathlengthfigures2(controlanalysis);
+    try pathlengthfigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Radial Distance from Soma.');
     %12
-    radialdistancefigures1(controlanalysis);
+    try radialdistancefigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %13
-    radialdistancefigures2(controlanalysis);
+    try radialdistancefigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Branch Length.');
     %14
-    branchlengthfigures1(controlanalysis);
+    try branchlengthfigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %15
-    branchlengthfigures2(controlanalysis);
+    try branchlengthfigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Branch Order.');
     %16
-    branchorderfigures1(controlanalysis);
+    try branchorderfigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %17
-    branchorderfigures2(controlanalysis);
+    try branchorderfigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %18
-    branchorderfigures3(controlanalysis);
+    try branchorderfigures3(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Degree.');
     %19
-    degreefigures1(controlanalysis);
+    try degreefigures1(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %20
-    degreefigures2(controlanalysis);
+    try degreefigures2(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %21
-    degreefigures3(controlanalysis);
+    try degreefigures3(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %22
-    branchingparametersscatterplots(controlanalysis);
+    try branchingparametersscatterplots(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %23
-    cableanalysisfigures(controlanalysis);
+    try cableanalysisfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    cableanalysisfigures_lognormal(controlanalysis);
+    try cableanalysisfigures_lognormal(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
 	%24
-	cablepropertyfigures(controlanalysis);
+	try cablepropertyfigures(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
 	close all;
     %25
-    taperratescatterplots(controlanalysis);
+    try taperratescatterplots(controlanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     
 else
     disp('     Parameter Distribution Figures.');
     %01
-    parameterdistributionfigures(controlanalysis,testanalysis);
+    try parameterdistributionfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %02
-    parameterdistributionboxplots(controlanalysis,testanalysis);
+    try parameterdistributionboxplots(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %03
-    try
-        segmentnumberhistograms(controlanalysis,testanalysis);
-    catch error
-        error
-    end
+    try segmentnumberhistograms(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %04
-    branchtypeprobfigures(controlanalysis,testanalysis);
+    try branchtypeprobfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %05(1-3)
-    branchendingprobfigures(controlanalysis,testanalysis);
+    try branchendingprobfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    branchendingprobfigures_bif(controlanalysis,testanalysis);
+    try branchendingprobfigures_bif(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %05(4-6)
-    %burkebranchendingprobfigures(controlanalysis,testanalysis);
+    try burkebranchendingprobfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('     Morphometrics Figures ');
     disp('       vs Soma Diameter.');
     %06
-    somadiameterfigures(controlanalysis,testanalysis);
-    somacsafigures(controlanalysis,testanalysis);
-    somavolumefigures(controlanalysis,testanalysis);
+    try somadiameterfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
+    try somacsafigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
+    try somavolumefigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %07
     disp('       vs Primary Dendrite Diameter.');
-    centroidtotrunkdirectionhistograms(controlanalysis,testanalysis);
+    try centroidtotrunkdirectionhistograms(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunksizefigures(controlanalysis,testanalysis);
+    try trunksizefigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdistancefigures(controlanalysis,testanalysis);
+    try trunkdistancefigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkpositionfigures(controlanalysis,testanalysis);
+    try trunkpositionfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures(controlanalysis,testanalysis);
+    try trunkdirectionfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionhistograms(controlanalysis,testanalysis);
+    try trunkdirectionhistograms(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures2(controlanalysis,testanalysis);
+    try trunkdirectionfigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    trunkdirectionfigures3(controlanalysis,testanalysis);
+    try trunkdirectionfigures3(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Local Diameter.');
     %08
-    diameterfigures1(controlanalysis,testanalysis);
+    try diameterfigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %09
-    diameterfigures2(controlanalysis,testanalysis);
+    try diameterfigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Path Length from Soma.');
     %10
-    pathlengthfigures1(controlanalysis,testanalysis);
+    try pathlengthfigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %11
-    pathlengthfigures2(controlanalysis,testanalysis);
+    try pathlengthfigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Radial Distance from Soma.');
     %12
-    radialdistancefigures1(controlanalysis,testanalysis);
+    try radialdistancefigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %13
-    radialdistancefigures2(controlanalysis,testanalysis);
+    try radialdistancefigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Branch Length.');
     %14
-    branchlengthfigures1(controlanalysis,testanalysis);
+    try branchlengthfigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %15
-    branchlengthfigures2(controlanalysis,testanalysis);
+    try branchlengthfigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Branch Order.');
     %16
-    branchorderfigures1(controlanalysis,testanalysis);
+    try branchorderfigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %17
-    branchorderfigures2(controlanalysis,testanalysis);
+    try branchorderfigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %18
-    branchorderfigures3(controlanalysis,testanalysis);
+    try branchorderfigures3(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     disp('       vs Degree.');
     %19
-    degreefigures1(controlanalysis,testanalysis);
+    try degreefigures1(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %20
-    degreefigures2(controlanalysis,testanalysis);
+    try degreefigures2(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %21
-    degreefigures3(controlanalysis,testanalysis);
+    try degreefigures3(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %22
-    branchingparametersscatterplots(controlanalysis,testanalysis);
+    try branchingparametersscatterplots(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     %23
-    cableanalysisfigures(controlanalysis,testanalysis);
+    try cableanalysisfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    cableanalysisfigures_lognormal(controlanalysis,testanalysis);
+    try cableanalysisfigures_lognormal(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
-    cableanalysisboxplots(controlanalysis,testanalysis);
+    try cableanalysisboxplots(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
 	%24
-	cablepropertyfigures(controlanalysis,testanalysis);
+	try cablepropertyfigures(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
 	close all;
     %25
-    %taperratescatterplots(controlanalysis,testanalysis);
+    try taperratescatterplots(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce figure.'); end
     close all;
     
 end
 
 
-% disp('    Summary Tables.');
-% summarytable_ind(controlanalysis);
-% summarytable(controlanalysis);
-%
-% disp('    Primary Dendrite Table.');
-% primarydendritetable(controlanalysis);
-%
-% disp('    Branch Order Table.');
-% branchordertable(controlanalysis);
+disp('    Summary Tables.');
+try summarytable_ind(controlanalysis);
+catch exception; disp('       Failed to produce table.'); end
+try summarytable(controlanalysis);
+catch exception; disp('       Failed to produce table.'); end
+
+disp('    Primary Dendrite Table.');
+try primarydendritetable(controlanalysis);
+catch exception; disp('       Failed to produce table.'); end
+
+disp('    Branch Order Table.');
+try branchordertable(controlanalysis);
+catch exception; disp('       Failed to produce table.'); end
 
 cd(mnhome);
 
