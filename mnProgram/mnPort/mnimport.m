@@ -9,13 +9,13 @@ mnhome = cd;
 cd('mnInput');
 mnoptions;
 
-if strcmp(option.mnimport.pieceshape,'cylindrical')
+if strcmp(option.mnimport.pieceshape,'frustal')
     disp(' ');
-    disp('   Piece type is set to ''cylindrical''.');
+    disp('   Piece type is set to ''frustal''.');
     cylindricalcheck = input('   Is this correct? (y/n): ','s');
     if ~strcmp(cylindricalcheck,'y') && ~strcmp(cylindricalcheck,'yes')
-        option.mnimport.pieceshape = 'frustal';
-        disp('   Changing piece type to ''frustal''.');
+        option.mnimport.pieceshape = 'cylindrical';
+        disp('   Changing piece type to ''cylindrical''.');
     end
 end
 
