@@ -1,22 +1,24 @@
 function mnimport(varargin)
-% This function imports SWC files of BBP morphologies into the format 
+% This function imports SWC files and BBP morphologies into the format 
 % used in mnCode
 
 [helppath,addpaths] = fileparts(which('mnaddpaths.m'));
 cd(helppath);
 cd ..
 mnhome = cd;
-cd('mnInput');
 mnoptions;
 
 if strcmp(option.mnimport.pieceshape,'frustal')
     disp(' ');
     disp('   Piece type is set to ''frustal''.');
-    cylindricalcheck = input('   Is this correct? (y/n): ','s');
-    if ~strcmp(cylindricalcheck,'y') && ~strcmp(cylindricalcheck,'yes')
-        option.mnimport.pieceshape = 'cylindrical';
-        disp('   Changing piece type to ''cylindrical''.');
-    end
+    disp('   If this is incorrect, change option.mnimport.pieceshape')
+    disp('   to ''cylindrical'' in mnHelp/mnoptions.m')
+
+    %cylindricalcheck = input('   Is this correct? (y/n): ','s');
+    %if ~strcmp(cylindricalcheck,'y') && ~strcmp(cylindricalcheck,'yes')
+    %    option.mnimport.pieceshape = 'cylindrical';
+    %    disp('   Changing piece type to ''cylindrical''.');
+    %end
 end
 
 disp(' ');
@@ -24,37 +26,63 @@ disp('  ------------------------------------');
 disp('   Motoneuron import started.');
 disp('  ------------------------------------');
 
+pathname = 0;
+
 if nargin == 0
     disp('   Please type the name of the population');
     disp('    at the prompt and press enter.');
     inputfilename = input('   Population name: ','s');
 elseif nargin == 1
     inputfilename = varargin{1};
-elseif nargin > 1
-    disp(' ');
-    disp('   Only one input (the desired name of');
-    disp('    the population) is allowed.');
-end
-
-disp('   Please choose the input ''.swc'' or ');
-disp('    ''.h5'' file(s) via the dialog box.');
-
-[importfilename, pathname] = uigetfile('*.swc;*.h5', 'Choose the input file(s) for mnPort:','MultiSelect','on');
-if isequal(importfilename,0) || isequal(pathname,0)
-    disp(' ');
-    disp('   You must select a file to continue.');
-    disp('    Please start over.');
-    disp(' ');
-    mnpop='Error';
-    return;
-end
-if iscell(importfilename) == 1
-    importfilename = sort(importfilename);
-    numbermns = length(importfilename);
 else
-    importfilename = {importfilename};
-    numbermns = 1;
+    inputfilename = varargin{1};
+    pathname = varargin{2};
 end
+
+if isequal(pathname,0)
+    disp('   Please choose the input ''.swc'' or ');
+    disp('    ''.h5'' file(s) via the dialog box.');
+
+    [importfilename, pathname] = uigetfile('*.swc;*.h5', 'Choose the input file(s) for mnPort:','MultiSelect','on');
+    if isequal(importfilename,0) || isequal(pathname,0)
+        disp(' ');
+        disp('   You must select a file to continue.');
+        disp('    Please start over.');
+        disp(' ');
+        mnpop='Error';
+        return;
+    end
+    if iscell(importfilename) == 1
+        importfilename = sort(importfilename);
+        numbermns = length(importfilename);
+    else
+        importfilename = {importfilename};
+        numbermns = 1;
+    end
+
+else
+
+    importfilename = {};
+    
+    if exist(pathname, 'file') == 2
+        [pathname, filename, ext] = fileparts(pathname);
+        importfilename{1} = strcat(filename, ext);
+        numbermns = 1;
+    else
+        if isdir(pathname) == 1
+            pathnameinfo = what(pathname);
+            pathname = pathnameinfo.path;
+            importfileinfo = dir(fullfile(pathname, '*.swc'));
+            for i = 1 : length(importfileinfo)
+                importfilename{i} = importfileinfo(i).name;
+            end
+            numbermns = length(importfilename);  
+        else
+            pathname = 0  
+        end
+    end
+end
+
 cd(pathname);
 
 [~, ~, filetype] = fileparts(importfilename{1});
