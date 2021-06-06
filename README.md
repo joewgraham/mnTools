@@ -16,3 +16,23 @@ You will need to clone this repository, start MATLAB, change directories to ``mn
 
 This will add the necessary ``mnTools`` paths to MATLAB and put you back in the main ``mnTools`` directory.
 
+Now we will import and analyze a few populations of morphologies.
+
+    mnimport('real', 'mnInput/mns_real_virtual/real_burke/')
+    mnfigures(real_analysis)
+    
+    mnimport('virtual_a', 'mnInput/mns_real_virtual/virtual_a/')
+    mnfigures(virtual_a_analysis)
+    
+    mnimport('virtual_b', 'mnInput/mns_real_virtual/virtual_b/')
+    mnfigures(virtual_b_analysis)
+    
+    mnimport('virtual_g', 'mnInput/mns_real_virtual/virtual_g/')
+    mnfigures(virtual_g_analysis)
+    
+Now we will compare the real and virtual populations.
+
+    mncomparisonfigures(real_analysis, virtual_a_analysis)
+    mncomparisonfigures(real_analysis, virtual_b_analysis)
+    mncomparisonfigures(real_analysis, virtual_g_analysis)
+    
