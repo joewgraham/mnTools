@@ -8,8 +8,8 @@ figure; box on;
 
 if nargin == 1
 
-    controldatax   = [controlanalysis.diameter.diameter];
-    controldatay   = [controlanalysis.diameter.numbersegments.total];
+    controldatax   = [controlanalysis.dendrite.diameter.diameter];
+    controldatay   = [controlanalysis.dendrite.diameter.numbersegments.total];
     
 
     bar(controldatax,controldatay,'b');
@@ -57,10 +57,10 @@ end
 
 if nargin == 2
     
-    controldatax   = [controlanalysis.diameter.diameter];
-    controldatay   = [controlanalysis.diameter.numbersegments.total];
-    testdatax   = [testanalysis.diameter.diameter];
-    testdatay   = [testanalysis.diameter.numbersegments.total];
+    controldatax   = [controlanalysis.dendrite.diameter.diameter];
+    controldatay   = [controlanalysis.dendrite.diameter.numbersegments.total];
+    testdatax   = [testanalysis.dendrite.diameter.diameter];
+    testdatay   = [testanalysis.dendrite.diameter.numbersegments.total];
     
     bar(controldatax,controldatay,'b');
     hold on;
@@ -69,7 +69,7 @@ if nargin == 2
     xlabel('Diameter Bins (\mum)','FontSize',labelfontsize,'FontWeight','b');
     legendhandle = gca; 
     %h=gca; set(gca,'XDir','reverse');
-    h = findobj(gca,'Type','patch');
+    h = findobj(gca,'Type','Bar');
     set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
     set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
     %     ylimits=ylim;
