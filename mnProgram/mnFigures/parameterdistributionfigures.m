@@ -248,16 +248,21 @@ for piecetype = 2:4
             [ignore,h]=suplabel([controlanalysis.inputfilename ' vs ' testanalysis.inputfilename ' -- ' currentpiecetitle ' Population Measures']  ,'t');
             set(h,'FontSize',titlefontsize);
             legend(legendhandle,controlanalysis.inputfilename,testanalysis.inputfilename,'Location','NorthEast');
+            
             cd(testanalysis.datapathname);
             cd ..
             if exist(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename),'dir') ~= 7;
                 mkdir(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
             end
             cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
-            if exist(piecetypes{piecetype},'dir') ~= 7
-                mkdir(piecetypes{piecetype});
+            
+            if exist('comparisonfigures','dir')==7
+                cd('comparisonfigures');
+            else
+                mkdir('comparisonfigures');
+                cd('comparisonfigures');
             end
-            cd(piecetypes{piecetype});
+            
             filename = sprintf('%s_%s_%s_01_Pop_Meas',controlanalysis.inputfilename,testanalysis.inputfilename,currentpiecetype);
         end
         
