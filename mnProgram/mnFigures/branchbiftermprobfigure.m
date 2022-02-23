@@ -104,6 +104,8 @@ for piecetype = 2:4
                 plot(x1,t1./n1,'dr','MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
                 plot(x1,b1fit./n1,'-g','LineWidth',2);
                 plot(x1,t1fit./n1,'-r','LineWidth',2);
+                legend(legendhandle1,[controlanalysis.inputfilename ' Total'],[controlanalysis.inputfilename ' Bifs'],[controlanalysis.inputfilename ' Terms'],'Location','NorthEast');
+                legend(legendhandle2,[controlanalysis.inputfilename ' Bif Prob'],[controlanalysis.inputfilename ' Term Prob'],[controlanalysis.inputfilename ' Bif Prob Fit'],[controlanalysis.inputfilename ' Term Prob Fit'],'Location','NorthEast');
             else
                 plot(x1,b1./n1,'sg','MarkerEdgeColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
                 plot(x1,t1./n1,'dr','MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
@@ -113,6 +115,8 @@ for piecetype = 2:4
                 plot(x2,t2./n2,'dm','MarkerEdgeColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
                 plot(x2,b2fit./n2,'-y','LineWidth',2);
                 plot(x2,t2fit./n2,'-m','LineWidth',2);
+                legend(legendhandle1,[controlanalysis.inputfilename ' Total'],[controlanalysis.inputfilename ' Bifs'],[controlanalysis.inputfilename ' Terms'],[testanalysis.inputfilename ' Total'],[testanalysis.inputfilename ' Bifs'],[testanalysis.inputfilename ' Terms'],'Location','NorthEast');
+                legend(legendhandle2,[controlanalysis.inputfilename ' Bif Prob'],[controlanalysis.inputfilename ' Term Prob'],[controlanalysis.inputfilename ' Bif Prob Fit'],[controlanalysis.inputfilename ' Term Prob Fit'],[testanalysis.inputfilename ' Bif Prob'],[testanalysis.inputfilename ' Term Prob'],[testanalysis.inputfilename ' Bif Prob Fit'],[testanalysis.inputfilename ' Term Prob Fit'],'Location','NorthEast');
             end
             set(gca,'FontSize',axesfontsize);
             hold off;
@@ -160,42 +164,6 @@ end
 
 
         
-
-%         if exist(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename),'dir')==7;
-%             cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
-%         else
-%             mkdir(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
-%             cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
-%         end
-
-%         if exist('comparisonfigures','dir')==7
-%             cd('comparisonfigures');
-%         else
-%             mkdir('comparisonfigures');
-%             cd('comparisonfigures');
-%         end
-
-%         %fillscreen;
-
-%         legend(legendhandle1,[controlanalysis.inputfilename ' Total'],[controlanalysis.inputfilename ' Bifs'],[controlanalysis.inputfilename ' Terms'],[testanalysis.inputfilename ' Total'],[testanalysis.inputfilename ' Bifs'],[testanalysis.inputfilename ' Terms'],'Location','NorthEast');
-%         legend(legendhandle2,[controlanalysis.inputfilename ' Bif Prob'],[controlanalysis.inputfilename ' Term Prob'],[controlanalysis.inputfilename ' Bif Prob Fit'],[controlanalysis.inputfilename ' Term Prob Fit'],[testanalysis.inputfilename ' Bif Prob'],[testanalysis.inputfilename ' Term Prob'],[testanalysis.inputfilename ' Bif Prob Fit'],[testanalysis.inputfilename ' Term Prob Fit'],'Location','NorthEast');
-
-
-%         filename = sprintf('%s_%s_%s',controlanalysis.inputfilename,testanalysis.inputfilename,'401_Branch_Bif_Term_Prob_Diam');
-%         print('-djpeg',filename);
-%         %saveas(gcf,filename,'fig');        
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
