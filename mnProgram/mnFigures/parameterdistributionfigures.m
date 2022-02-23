@@ -235,10 +235,6 @@ for piecetype = 2:4
             [ignore,h]=suplabel([controlanalysis.inputfilename ' -- ' currentpiecetitle ' Population Measures']  ,'t');
             set(h,'FontSize',titlefontsize);
             cd(controlanalysis.datapathname);
-            if exist(piecetypes{piecetype},'dir') ~= 7
-                mkdir(piecetypes{piecetype});
-            end
-            cd(piecetypes{piecetype});
             if exist('figures','dir') ~= 7
                 mkdir('figures');
             end
