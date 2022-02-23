@@ -55,7 +55,6 @@ for piecetype = 2:4
             currentversustitle = versusestitles{versus};
             
             eval(['x1 = [controltype.' currentversus '.' currentversus ']'';']);
-            disp(['b1 = [controltype.' currentversus '.numberbifurcatingbranches.mean]'';'])
             eval(['b1 = [controltype.' currentversus '.numberbifurcatingbranches.mean]'';']);
             eval(['t1 = [controltype.' currentversus '.numberterminatingbranches.mean]'';']);
             n1 = b1 + t1;
@@ -122,6 +121,37 @@ for piecetype = 2:4
             [ax,h3]=suplabel([currentpiecetitle ' Branch Bifurcation / Termination Probability vs ' currentversustitle],'t');
             set(h3,'FontSize',titlefontsize);
 
+            currentdirectory = cd;
+            cd(controlanalysis.datapathname);
+
+            if nargin == 1
+                if exist('figures','dir') ~= 7
+                    mkdir('figures');
+                end
+                cd('figures');
+                filename = sprintf('%s_%s_401_Branch_Bif_Term_Prob_%s',controlanalysis.inputfilename,currentpiecetype, currentversus);
+            else
+                cd ..
+                if exist(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename),'dir') ~= 7;
+                    mkdir(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
+                end
+                cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
+            
+                if exist('comparisonfigures','dir')~=7
+                    mkdir('comparisonfigures');
+                end
+                cd('comparisonfigures');
+            
+                filename = sprintf('%s_%s_%s_401_Branch_Bif_Term_Prob_%s',controlanalysis.inputfilename,testanalysis.inputfilename,currentpiecetype,currentversus);
+            end
+
+            print('-djpeg',filename);
+            if strcmp(option.mnfigures.matfig,'y')
+                saveas(gcf,filename,'fig');
+            end
+            
+            cd(currentdirectory);
+
             
         end
     end
@@ -129,18 +159,7 @@ end
 
 
 
-
-
-
-%         %subplotspace('horizontal',-20);
-%         subplotspace('vertical',-15);
-
-%         [ax,h3]=suplabel('Branch Bifurcation / Termination Probability vs Diameter'  ,'t');
-%         set(h3,'FontSize',titlefontsize);
-
-%         currentdirectory = cd;
-%         cd(controlanalysis.datapathname);
-%         cd ..
+        
 
 %         if exist(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename),'dir')==7;
 %             cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));

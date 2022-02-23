@@ -1,5 +1,4 @@
-mnimport('real', 'mnInput/mns_real_virtual/real_burke/')
-mnimport('virtual_g', 'mnInput/mns_real_virtual/virtual_g6/')
-mncomparisonfigures(real_analysis, virtual_g_analysis)
+mnimport('real', 'mnInput/mns_real_virtual/real3/')
+mnimport('virtual', 'mnInput/mns_real_virtual/virtual3/')
+mncomparisonfigures(real_analysis, virtual_analysis)
 
-% mncomparisonfigures(real_analysis, virtual_g_analysis)
