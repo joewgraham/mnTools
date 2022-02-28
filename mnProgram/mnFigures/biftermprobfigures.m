@@ -71,58 +71,90 @@ for piecetype = 2:4
             figure;
             subplotcount = 0;
 
-            for versus = 1:4
+            for row = 1:3
 
-                subplotcount = subplotcount + 1;
+                for versus = 1:4
 
-                currentversus = versuses{versus};
-                currentversustitle = versusestitles{versus};
+                    subplotcount = subplotcount + 1;
 
-                eval(['bifx = controltype.bifurcation.' currentversus '.' currentversus ';']);
-                eval(['bify1 = [controltype.bifurcation.' currentversus '.numbersegments.total];']);
-                eval(['bify2 = [controltype.bifurcation.' currentversus '.' currentdriver '.total];']);
-                eval(['termx = controltype.termination.' currentversus '.' currentversus ';']);
-                eval(['termy1 = [controltype.termination.' currentversus '.numbersegments.total];']);
-                eval(['termy2 = [controltype.termination.' currentversus '.' currentdriver '.total];']);
+                    currentversus = versuses{versus};
+                    currentversustitle = versusestitles{versus};
 
-                curylabel = ['# of Endings      ' currentdrivertitle];
+                    eval(['bifx = controltype.bifurcation.' currentversus '.' currentversus ';']);
+                    eval(['bify1 = [controltype.bifurcation.' currentversus '.numbersegments.total];']);
+                    eval(['bify2 = [controltype.bifurcation.' currentversus '.' currentdriver '.total];']);
+                    eval(['termx = controltype.termination.' currentversus '.' currentversus ';']);
+                    eval(['termy1 = [controltype.termination.' currentversus '.numbersegments.total];']);
+                    eval(['termy2 = [controltype.termination.' currentversus '.' currentdriver '.total];']);
 
-                if nargin == 1
+                    curylabel = ['# of Endings      ' currentdrivertitle];
 
-                    subplot(3,4,subplotcount); box on;
-                    loglog([bifx],[bify1],'-sg','LineWidth',1.5,'MarkerEdgeColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
-                    hold on;
-                    loglog([termx],[termy1],'-dr','LineWidth',1.5,'MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
-                    loglog([bifx],[bify2],'-g','LineWidth',2);
-                    loglog([termx],[termy2],'-r','LineWidth',2);
-                    ylabel(curylabel,'FontSize',labelfontsize,'FontWeight','b');
-                    set(gca,'FontSize',axesfontsize); hold off;
+                    if row == 1
 
-                else
+                        if nargin == 1
 
-                    eval(['testbifx = testtype.bifurcation.' currentversus '.' currentversus ';']);
-                    eval(['testbify1 = [testtype.bifurcation.' currentversus '.numbersegments.total];']);
-                    eval(['testbify2 = [testtype.bifurcation.' currentversus '.' currentdriver '.total];']);
-                    eval(['testtermx = testtype.termination.' currentversus '.' currentversus ';']);
-                    eval(['testtermy1 = [testtype.termination.' currentversus '.numbersegments.total];']);
-                    eval(['testtermy2 = [testtype.termination.' currentversus '.' currentdriver '.total];']);
+                            subplot(3,4,subplotcount); box on;
+                            loglog([bifx],[bify1],'-sg','LineWidth',1.5,'MarkerEdgeColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+                            hold on;
+                            loglog([termx],[termy1],'-dr','LineWidth',1.5,'MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
+                            loglog([bifx],[bify2],'-g','LineWidth',2);
+                            loglog([termx],[termy2],'-r','LineWidth',2);
+                            ylabel(curylabel,'FontSize',labelfontsize,'FontWeight','b');
+                            set(gca,'FontSize',axesfontsize); hold off;
 
-                    subplot(3,4,subplotcount); box on;
-                    
-                    loglog([bifx],[bify1],'-sg','LineWidth',1.5,'MarkerEdgeColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
-                    hold on;
-                    loglog([termx],[termy1],'-dr','LineWidth',1.5,'MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
-                    loglog([bifx],[bify2],'-g','LineWidth',2);
-                    loglog([termx],[termy2],'-r','LineWidth',2);
+                        else
 
-                    loglog([testbifx],[testbify1],'-sy','LineWidth',1.5,'MarkerEdgeColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
-                    loglog([testtermx],[testtermy1],'-dm','LineWidth',1.5,'MarkerEdgeColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
-                    loglog([testbifx],[testbify2],'-y','LineWidth',2);
-                    loglog([testtermx],[testtermy2],'-m','LineWidth',2);
-                    
-                    ylabel(curylabel,'FontSize',labelfontsize,'FontWeight','b');
-                    set(gca,'FontSize',axesfontsize); hold off;
+                            eval(['testbifx = testtype.bifurcation.' currentversus '.' currentversus ';']);
+                            eval(['testbify1 = [testtype.bifurcation.' currentversus '.numbersegments.total];']);
+                            eval(['testbify2 = [testtype.bifurcation.' currentversus '.' currentdriver '.total];']);
+                            eval(['testtermx = testtype.termination.' currentversus '.' currentversus ';']);
+                            eval(['testtermy1 = [testtype.termination.' currentversus '.numbersegments.total];']);
+                            eval(['testtermy2 = [testtype.termination.' currentversus '.' currentdriver '.total];']);
 
+                            subplot(3,4,subplotcount); box on;
+                            
+                            loglog([bifx],[bify1],'-sg','LineWidth',1.5,'MarkerEdgeColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+                            hold on;
+                            loglog([termx],[termy1],'-dr','LineWidth',1.5,'MarkerEdgeColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+                            loglog([bifx],[bify2],'-g','LineWidth',2);
+                            loglog([termx],[termy2],'-r','LineWidth',2);
+
+                            loglog([testbifx],[testbify1],'-sy','LineWidth',1.5,'MarkerEdgeColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+                            loglog([testtermx],[testtermy1],'-dm','LineWidth',1.5,'MarkerEdgeColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+                            loglog([testbifx],[testbify2],'-y','LineWidth',2);
+                            loglog([testtermx],[testtermy2],'-m','LineWidth',2);
+                            
+                            ylabel(curylabel,'FontSize',labelfontsize,'FontWeight','b');
+                            set(gca,'FontSize',axesfontsize); hold off;
+
+                        end
+
+                    elseif row == 2
+                        if nargin == 1
+                            subplot(3,4,subplotcount); box on;
+                            semilogy([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+                            hold on;
+                            semilogy([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
+                            ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
+                            set(gca,'FontSize',axesfontsize); hold off;
+                            
+                        else
+
+                            subplot(3,4,subplotcount); box on;
+                            semilogy([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+                            hold on;
+                            semilogy([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+                            semilogy([testtype.bifurcation.diameter.diameter],[testtype.bifurcation.diameter.bifurcationprobability.length],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+                            semilogy([testtype.termination.diameter.diameter],[testtype.termination.diameter.terminationprobability.length],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+                            ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
+                            set(gca,'FontSize',axesfontsize); hold off;
+                        end
+
+
+                    elseif row == 3
+                        disp('row 3')
+
+                    end
                 end
             end
 
@@ -587,14 +619,14 @@ end
 %     legendhandle = gca;
 %     set(gca,'FontSize',axesfontsize); hold off;
 
-%     subplot(3,4,5); box on;
-%     semilogy([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
-%     hold on;
-%     semilogy([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
-%     semilogy([testanalysis.bifurcation.diameter.diameter],[testanalysis.bifurcation.diameter.bifurcationprobability.length],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
-%     semilogy([testanalysis.termination.diameter.diameter],[testanalysis.termination.diameter.terminationprobability.length],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
-%     ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
-%     set(gca,'FontSize',axesfontsize); hold off;
+    % subplot(3,4,5); box on;
+    % semilogy([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+    % hold on;
+    % semilogy([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+    % semilogy([testanalysis.bifurcation.diameter.diameter],[testanalysis.bifurcation.diameter.bifurcationprobability.length],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+    % semilogy([testanalysis.termination.diameter.diameter],[testanalysis.termination.diameter.terminationprobability.length],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+    % ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
+    % set(gca,'FontSize',axesfontsize); hold off;
     
 %     subplot(3,4,6); box on; 
 %     semilogy([controlanalysis.bifurcation.pathlength.pathlength],[controlanalysis.bifurcation.pathlength.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
