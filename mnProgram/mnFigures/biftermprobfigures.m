@@ -137,22 +137,30 @@ for piecetype = 2:4
                         end
 
                     elseif row == 2
+                        eval(['bifx = controltype.bifurcation.' currentversus '.' currentversus ';']);
+                        eval(['bify = [controltype.bifurcation.' currentversus '.bifurcationprobability.' currentdriver '];']);
+                        eval(['termx = controltype.termination.' currentversus '.' currentversus ';']);
+                        eval(['termy = [controltype.termination.' currentversus '.terminationprobability.' currentdriver '];']);
                         if nargin == 1
                             subplot(3,4,subplotcount); box on;
-                            semilogy([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+                            semilogy([bifx],[bify],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
                             hold on;
-                            semilogy([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
+                            semilogy([termx],[termy],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
                             if ismember(subplotcount, [1,5,9])
                                 ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
                             end
                             set(gca,'FontSize',axesfontsize); hold off;
                         else
+                            eval(['testbifx = testtype.bifurcation.' currentversus '.' currentversus ';']);
+                            eval(['testbify = [testtype.bifurcation.' currentversus '.bifurcationprobability.' currentdriver '];']);
+                            eval(['testtermx = testtype.termination.' currentversus '.' currentversus ';']);
+                            eval(['testtermy = [testtype.termination.' currentversus '.terminationprobability.' currentdriver '];']);
                             subplot(3,4,subplotcount); box on;
-                            semilogy([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+                            semilogy([bifx],[bify],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
                             hold on;
-                            semilogy([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
-                            semilogy([testtype.bifurcation.diameter.diameter],[testtype.bifurcation.diameter.bifurcationprobability.length],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
-                            semilogy([testtype.termination.diameter.diameter],[testtype.termination.diameter.terminationprobability.length],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+                            semilogy([termx],[termy],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+                            semilogy([testbifx],[testbify],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+                            semilogy([testtermx],[testtermy],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
                             if ismember(subplotcount, [1,5,9])
                                 ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
                             end
@@ -160,28 +168,34 @@ for piecetype = 2:4
                         end
 
                     elseif row == 3
+                        eval(['bifx = controltype.bifurcation.' currentversus '.' currentversus ';']);
+                        eval(['bify = [controltype.bifurcation.' currentversus '.bifurcationprobability.' currentdriver '];']);
+                        eval(['termx = controltype.termination.' currentversus '.' currentversus ';']);
+                        eval(['termy = [controltype.termination.' currentversus '.terminationprobability.' currentdriver '];']);
                         if nargin == 1
                             subplot(3,4,subplotcount); box on;
-                            loglog([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+                            loglog([bifx],[bify],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
                             hold on;
-                            loglog([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
-                            xlabel(currentversustitle,'FontSize',labelfontsize,'FontWeight','b');
+                            loglog([termx],[termy],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
                             if ismember(subplotcount, [1,5,9])
-                                ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+                                ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b');
                             end
                             set(gca,'FontSize',axesfontsize); hold off;
                         else
+                            eval(['testbifx = testtype.bifurcation.' currentversus '.' currentversus ';']);
+                            eval(['testbify = [testtype.bifurcation.' currentversus '.bifurcationprobability.' currentdriver '];']);
+                            eval(['testtermx = testtype.termination.' currentversus '.' currentversus ';']);
+                            eval(['testtermy = [testtype.termination.' currentversus '.terminationprobability.' currentdriver '];']);
                             subplot(3,4,subplotcount); box on;
-                            loglog([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.volume],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+                            loglog([bifx],[bify],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
                             hold on;
-                            loglog([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.volume],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
-                            loglog([testtype.bifurcation.diameter.diameter],[testtype.bifurcation.diameter.bifurcationprobability.volume],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
-                            loglog([testtype.termination.diameter.diameter],[testtype.termination.diameter.terminationprobability.volume],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
-                            xlabel(currentversustitle,'FontSize',labelfontsize,'FontWeight','b');
+                            loglog([termx],[termy],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+                            loglog([testbifx],[testbify],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+                            loglog([testtermx],[testtermy],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
                             if ismember(subplotcount, [1,5,9])
-                                ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+                                ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b');
                             end
-                            set(gca,'FontSize',axesfontsize); hold off; 
+                            set(gca,'FontSize',axesfontsize); hold off;
                         end
                     end
                 end
