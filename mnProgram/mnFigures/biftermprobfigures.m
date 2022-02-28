@@ -137,9 +137,7 @@ for piecetype = 2:4
                             semilogy([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
                             ylabel('Probability (Semi-Log)','FontSize',labelfontsize,'FontWeight','b');
                             set(gca,'FontSize',axesfontsize); hold off;
-                            
                         else
-
                             subplot(3,4,subplotcount); box on;
                             semilogy([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
                             hold on;
@@ -150,9 +148,28 @@ for piecetype = 2:4
                             set(gca,'FontSize',axesfontsize); hold off;
                         end
 
-
                     elseif row == 3
-                        disp('row 3')
+                        if nargin == 1
+                            subplot(3,4,subplotcount); box on;
+                            loglog([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+                            hold on;
+                            loglog([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
+                            xlabel(currentversustitle,'FontSize',labelfontsize,'FontWeight','b');
+                            ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+                            set(gca,'FontSize',axesfontsize); hold off;
+                        else
+
+                            subplot(3,4,subplotcount); box on;
+                            loglog([controltype.bifurcation.diameter.diameter],[controltype.bifurcation.diameter.bifurcationprobability.volume],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+                            hold on;
+                            loglog([controltype.termination.diameter.diameter],[controltype.termination.diameter.terminationprobability.volume],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+                            loglog([testtype.bifurcation.diameter.diameter],[testtype.bifurcation.diameter.bifurcationprobability.volume],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+                            loglog([testtype.termination.diameter.diameter],[testtype.termination.diameter.terminationprobability.volume],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+                            xlabel(currentversustitle,'FontSize',labelfontsize,'FontWeight','b');
+                            ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+                            set(gca,'FontSize',axesfontsize); hold off;
+                            
+                        end
 
                     end
                 end
@@ -268,13 +285,13 @@ end
 %     semilogy([controlanalysis.termination.branchorder.branchorder],[controlanalysis.termination.branchorder.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);    
 %     set(gca,'FontSize',axesfontsize); hold off;
     
-%     subplot(3,4,9); box on;
-%     loglog([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
-%     hold on;
-%     loglog([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
-%     xlabel('Diameter','FontSize',labelfontsize,'FontWeight','b');
-%     ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
-%     set(gca,'FontSize',axesfontsize); hold off;
+    % subplot(3,4,9); box on;
+    % loglog([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
+    % hold on;
+    % loglog([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.length],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',indredmarkersize);
+    % xlabel('Diameter','FontSize',labelfontsize,'FontWeight','b');
+    % ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+    % set(gca,'FontSize',axesfontsize); hold off;
     
 %     subplot(3,4,10); box on; 
 %     loglog([controlanalysis.bifurcation.pathlength.pathlength],[controlanalysis.bifurcation.pathlength.bifurcationprobability.length],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',indgreenmarkersize);
@@ -976,15 +993,15 @@ end
 %     semilogy([testanalysis.termination.branchorder.branchorder],[testanalysis.termination.branchorder.terminationprobability.volume],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);    
 %     set(gca,'FontSize',axesfontsize); hold off;
     
-%     subplot(3,4,9); box on;
-%     loglog([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.volume],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
-%     hold on;
-%     loglog([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.volume],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
-%     loglog([testanalysis.bifurcation.diameter.diameter],[testanalysis.bifurcation.diameter.bifurcationprobability.volume],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
-%     loglog([testanalysis.termination.diameter.diameter],[testanalysis.termination.diameter.terminationprobability.volume],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
-%     xlabel('Diameter','FontSize',labelfontsize,'FontWeight','b');
-%     ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
-%     set(gca,'FontSize',axesfontsize); hold off;
+    % subplot(3,4,9); box on;
+    % loglog([controlanalysis.bifurcation.diameter.diameter],[controlanalysis.bifurcation.diameter.bifurcationprobability.volume],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
+    % hold on;
+    % loglog([controlanalysis.termination.diameter.diameter],[controlanalysis.termination.diameter.terminationprobability.volume],'dr','MarkerFaceColor','r','MarkerFaceColor','r','MarkerSize',redmarkersize);
+    % loglog([testanalysis.bifurcation.diameter.diameter],[testanalysis.bifurcation.diameter.bifurcationprobability.volume],'sy','MarkerFaceColor','y','MarkerFaceColor','y','MarkerSize',yellowmarkersize);
+    % loglog([testanalysis.termination.diameter.diameter],[testanalysis.termination.diameter.terminationprobability.volume],'dm','MarkerFaceColor','m','MarkerFaceColor','m','MarkerSize',magentamarkersize);
+    % xlabel('Diameter','FontSize',labelfontsize,'FontWeight','b');
+    % ylabel('Probability (Log-Log)','FontSize',labelfontsize,'FontWeight','b'); 
+    % set(gca,'FontSize',axesfontsize); hold off;
     
 %     subplot(3,4,10); box on; 
 %     loglog([controlanalysis.bifurcation.pathlength.pathlength],[controlanalysis.bifurcation.pathlength.bifurcationprobability.volume],'sg','MarkerFaceColor','g','MarkerFaceColor','g','MarkerSize',greenmarkersize);
