@@ -170,12 +170,10 @@ for piecetype = 2:4
         end
         cd(sprintf('%s_%s_comparison',controlanalysis.inputfilename,testanalysis.inputfilename));
         
-        if exist('comparisonfigures','dir')==7
-            cd('comparisonfigures');
-        else
-            mkdir('comparisonfigures');
-            cd('comparisonfigures');
-        end
+        if exist(piecetypes{piecetype},'dir') ~= 7
+                mkdir(piecetypes{piecetype});
+            end
+            cd(piecetypes{piecetype});
         
         filename = sprintf('%s_%s_%s_02_Pop_Box',controlanalysis.inputfilename,testanalysis.inputfilename,currentpiecetype);
         
