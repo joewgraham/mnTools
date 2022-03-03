@@ -165,6 +165,7 @@ actmnnum = 0;
 for mnnum = 1 : numbermns
 
     actmnnum = actmnnum+1;
+    cd(mnhome);
     cd(pathname);
     disp(['    ' importfilename{mnnum}]);
     overlapwarninggiven = false;
