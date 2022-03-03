@@ -47,15 +47,13 @@ for piecetype = 2:4
         xlabel('Diameter (\mum)','FontSize',labelfontsize,'FontWeight','b');
         ylabel('Number of Segments','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.diameter.diameter],[controltype.diameter.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.diameter.diameter],[controltype.diameter.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.diameter.diameter],[controltype.diameter.numbersegments.mean],'b');
-            bar([testtype.diameter.diameter],[testtype.diameter.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.diameter.diameter],[controltype.diameter.numbersegments.mean],'b');
+            h2 = bar([testtype.diameter.diameter],[testtype.diameter.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
             legendhandle = gca;
         end
         set(gca,'FontSize',axesfontsize);
@@ -68,15 +66,13 @@ for piecetype = 2:4
         xlabel('Intrabranch Length (\mum)','FontSize',labelfontsize,'FontWeight','b');
         ylabel('Number of Segments','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.branchlength.branchlength],[controltype.branchlength.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.branchlength.branchlength],[controltype.branchlength.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.branchlength.branchlength],[controltype.branchlength.numbersegments.mean],'b');
-            bar([testtype.branchlength.branchlength],[testtype.branchlength.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.branchlength.branchlength],[controltype.branchlength.numbersegments.mean],'b');
+            h2 = bar([testtype.branchlength.branchlength],[testtype.branchlength.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
         end
         set(gca,'FontSize',axesfontsize);
         hold off;
@@ -88,15 +84,13 @@ for piecetype = 2:4
         xlabel('Degree','FontSize',labelfontsize,'FontWeight','b');
         ylabel('Number of Segments','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.degree.degree],[controltype.degree.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.degree.degree],[controltype.degree.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.degree.degree],[controltype.degree.numbersegments.mean],'b');
-            bar([testtype.degree.degree],[testtype.degree.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.degree.degree],[controltype.degree.numbersegments.mean],'b');
+            h2 = bar([testtype.degree.degree],[testtype.degree.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
         end
         set(gca,'FontSize',axesfontsize);
         hold off;
@@ -107,15 +101,13 @@ for piecetype = 2:4
         hold on;
         xlabel('Path Length (\mum)','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.pathlength.pathlength],[controltype.pathlength.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.pathlength.pathlength],[controltype.pathlength.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.pathlength.pathlength],[controltype.pathlength.numbersegments.mean],'b');
-            bar([testtype.pathlength.pathlength],[testtype.pathlength.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.pathlength.pathlength],[controltype.pathlength.numbersegments.mean],'b');
+            h2 = bar([testtype.pathlength.pathlength],[testtype.pathlength.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
         end
         set(gca,'FontSize',axesfontsize);
         hold off;
@@ -126,15 +118,13 @@ for piecetype = 2:4
         hold on;
         xlabel('Radial Distance (\mum)','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.radialdistance.radialdistance],[controltype.radialdistance.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.radialdistance.radialdistance],[controltype.radialdistance.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.radialdistance.radialdistance],[controltype.radialdistance.numbersegments.mean],'b');
-            bar([testtype.radialdistance.radialdistance],[testtype.radialdistance.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.radialdistance.radialdistance],[controltype.radialdistance.numbersegments.mean],'b');
+            h2 = bar([testtype.radialdistance.radialdistance],[testtype.radialdistance.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
         end
         set(gca,'FontSize',axesfontsize);
         hold off;
@@ -145,15 +135,13 @@ for piecetype = 2:4
         hold on;
         xlabel('Branch Order','FontSize',labelfontsize,'FontWeight','b');
         if nargin == 1
-            bar([controltype.branchorder.branchorder],[controltype.branchorder.numbersegments.mean],'b');
-            h = findobj(gca,'Type','patch');
-            set(h(1),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.branchorder.branchorder],[controltype.branchorder.numbersegments.mean],'b');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
         else
-            bar([controltype.branchorder.branchorder],[controltype.branchorder.numbersegments.mean],'b');
-            bar([testtype.branchorder.branchorder],[testtype.branchorder.numbersegments.mean],'r');
-            h = findobj(gca,'Type','patch');
-            set(h(2),'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
-            set(h(1),'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            h1 = bar([controltype.branchorder.branchorder],[controltype.branchorder.numbersegments.mean],'b');
+            h2 = bar([testtype.branchorder.branchorder],[testtype.branchorder.numbersegments.mean],'r');
+            set(h1,'FaceColor','b','EdgeColor','b','FaceAlpha',0.5,'EdgeAlpha',0.5);
+            set(h2,'FaceColor','r','EdgeColor','r','FaceAlpha',0.5,'EdgeAlpha',0.5);
         end
         set(gca,'FontSize',axesfontsize);
         hold off;
