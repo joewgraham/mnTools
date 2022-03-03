@@ -35,6 +35,16 @@ for piecetype = 2:4
             popdata.radialdistancebins(i).parentdaughter2ratio.values = [];
             popdata.radialdistancebins(i).taperrate.values            = [];
             popdata.radialdistancebins(i).taperratelength.values      = [];
+
+            popdata.radialdistancebins(i).length.values                    = [];
+            popdata.radialdistancebins(i).surfacearea.values               = [];
+            popdata.radialdistancebins(i).volume.values                    = [];
+            popdata.radialdistancebins(i).numbersegments.values            = [];
+            popdata.radialdistancebins(i).numberbifurcations.values        = [];
+            popdata.radialdistancebins(i).numberterminations.values        = [];
+            popdata.radialdistancebins(i).numberbifurcatingbranches.values = [];
+            popdata.radialdistancebins(i).numberterminatingbranches.values = [];
+            popdata.radialdistancebins(i).diameter.values                  = [];
         end
         
         for i = 1:length(data.individual)
@@ -122,7 +132,6 @@ for piecetype = 2:4
         for m = 1:length(popdata.radialdistancebins)
             
             typeanalysis.radialdistance.radialdistance(m)              = (distancebinwidth * m) - (distancebinwidth / 2);
-            
             typeanalysis.radialdistance.length(m).values           = popdata.radialdistancebins(m).length.values;
             typeanalysis.radialdistance.length(m).mean             = mean([typeanalysis.radialdistance.length(m).values]);
             typeanalysis.radialdistance.length(m).std              = std([typeanalysis.radialdistance.length(m).values]);
@@ -300,6 +309,17 @@ for piecetype = 2:4
             popdata.bifurcation.radialdistancebins(n).parentdaughter2ratio.values = [];
             popdata.bifurcation.radialdistancebins(n).taperrate.values            = [];
             popdata.bifurcation.radialdistancebins(n).taperratelength.values      = [];
+
+            popdata.bifurcation.radialdistancebins(n).length.values                    = [];
+            popdata.bifurcation.radialdistancebins(n).surfacearea.values               = [];
+            popdata.bifurcation.radialdistancebins(n).volume.values                    = [];
+            popdata.bifurcation.radialdistancebins(n).numbersegments.values            = [];
+            popdata.bifurcation.radialdistancebins(n).numberbifurcations.values        = [];
+            popdata.bifurcation.radialdistancebins(n).numberterminations.values        = [];
+            popdata.bifurcation.radialdistancebins(n).numberbifurcatingbranches.values = [];
+            popdata.bifurcation.radialdistancebins(n).numberterminatingbranches.values = [];
+            popdata.bifurcation.radialdistancebins(n).diameter.values                  = [];
+
         end
         
         
