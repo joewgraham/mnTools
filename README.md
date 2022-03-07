@@ -19,18 +19,11 @@ This will add the necessary ``mnTools`` paths to MATLAB and put you back in the 
 Now we will import and analyze a few populations of morphologies.
 
     mnimport('real', 'mnInput/mns_real_virtual/real_burke/')
-    mnfigures(real_analysis)
-    
     mnimport('virtual_a', 'mnInput/mns_real_virtual/virtual_a/')
-    mnfigures(virtual_a_analysis)
-    
     mnimport('virtual_b', 'mnInput/mns_real_virtual/virtual_b/')
-    mnfigures(virtual_b_analysis)
-    
     mnimport('virtual_g', 'mnInput/mns_real_virtual/virtual_g/')
-    mnfigures(virtual_g_analysis)
     
-Now we will analyze a real population and compare the real and virtual populations.
+Now we will explore a real population and compare real and virtual populations.
 
     mnfigures(real_analysis)
     mnfigures(real_analysis, virtual_a_analysis)
