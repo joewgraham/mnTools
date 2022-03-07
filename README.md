@@ -30,9 +30,10 @@ Now we will import and analyze a few populations of morphologies.
     mnimport('virtual_g', 'mnInput/mns_real_virtual/virtual_g/')
     mnfigures(virtual_g_analysis)
     
-Now we will compare the real and virtual populations.
+Now we will analyze a real population and compare the real and virtual populations.
 
-    mncomparisonfigures(real_analysis, virtual_a_analysis)
-    mncomparisonfigures(real_analysis, virtual_b_analysis)
-    mncomparisonfigures(real_analysis, virtual_g_analysis)
+    mnfigures(real_analysis)
+    mnfigures(real_analysis, virtual_a_analysis)
+    mnfigures(real_analysis, virtual_b_analysis)
+    mnfigures(real_analysis, virtual_g_analysis)
     
