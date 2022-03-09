@@ -15,7 +15,8 @@ theta = linspace(0,2*pi(),8);
 
 for i = 1:length(data.individual)
     
-    if isfield(mnpop.mn(i).soma,'points')
+    %if isfield(mnpop.mn(i).soma,'points')
+    if false
         
         if size(mnpop.mn(i).soma.points,1) > 1
             
