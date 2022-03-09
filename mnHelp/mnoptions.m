@@ -54,7 +54,7 @@
 	option.axon.diameterbinwidths    = [0.25 0.5 1.0];
     
     % dendrite binning options
-    option.dendrite.distancebinwidth     = 50; %100 for motoneurons, 50 for L5TTPC 
+    option.dendrite.distancebinwidth     = 100; %100 for motoneurons, 50 for L5TTPC 
 	option.dendrite.branchlengthbinwidth = 25;
 	option.dendrite.diameterbinbreaks    = [2 4]; 
 	option.dendrite.diameterbinwidths    = [0.25 0.5 1.0];
@@ -120,7 +120,7 @@
     option.mnimport.clear.data = 'n';
     
     % pieces cylindrical or frustal?
-    option.mnimport.pieceshape = 'cylindrical';    
+    option.mnimport.pieceshape = 'cylindrical'; %'cylindrical'; %'frustal';    
     
     
     
