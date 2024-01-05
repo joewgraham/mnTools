@@ -14,31 +14,44 @@ end
 
 filename = sprintf('%s_%s',analysis.inputfilename,'ind_summary_table.csv');
 
-for i = 1:length(analysis.somadiameter.values)    
+for i = 1:length(analysis.soma.diameter.values)    
     tableleftlabels{i} = sprintf('%0.0f',i);
 end
 
-somadiameters = [analysis.somadiameter.values];
+somadiameters = [analysis.soma.diameter.values];
 somadiameters = [somadiameters mean(somadiameters) std(somadiameters) skewness(somadiameters) kurtosis(somadiameters) min(somadiameters) max(somadiameters)]';
-numberprimarydendrites = [analysis.numberprimarydendrites.values];
+
+numberprimarydendrites = [analysis.dendrite.numbertrunks.values];
 numberprimarydendrites = [numberprimarydendrites mean(numberprimarydendrites) std(numberprimarydendrites) skewness(numberprimarydendrites) kurtosis(numberprimarydendrites) min(numberprimarydendrites) max(numberprimarydendrites)]';
-primarydendritemeanproximaldiameter = [analysis.primarydendrite.meanproximaldiameter.values];
+
+% primarydendritemeanproximaldiameter = [analysis.primarydendrite.meanproximaldiameter.values];
+% primarydendritemeanproximaldiameter = [primarydendritemeanproximaldiameter mean(primarydendritemeanproximaldiameter) std(primarydendritemeanproximaldiameter) skewness(primarydendritemeanproximaldiameter) kurtosis(primarydendritemeanproximaldiameter) min(primarydendritemeanproximaldiameter) max(primarydendritemeanproximaldiameter)]';
+
+primarydendritemeanproximaldiameter = [analysis.dendrite.trunk.meanproximaldiameter.values];
 primarydendritemeanproximaldiameter = [primarydendritemeanproximaldiameter mean(primarydendritemeanproximaldiameter) std(primarydendritemeanproximaldiameter) skewness(primarydendritemeanproximaldiameter) kurtosis(primarydendritemeanproximaldiameter) min(primarydendritemeanproximaldiameter) max(primarydendritemeanproximaldiameter)]';
-primarydendritemeancylindricaldiameter = [analysis.primarydendrite.meancylindricaldiameter.values]; 
+
+primarydendritemeancylindricaldiameter = [analysis.dendrite.trunk.meancylindricaldiameter.values]; 
 primarydendritemeancylindricaldiameter = [primarydendritemeancylindricaldiameter mean(primarydendritemeancylindricaldiameter) std(primarydendritemeancylindricaldiameter) skewness(primarydendritemeancylindricaldiameter) kurtosis(primarydendritemeancylindricaldiameter) min(primarydendritemeancylindricaldiameter) max(primarydendritemeancylindricaldiameter)]';
-totaldendriticlength = [analysis.totallength.values];
+
+totaldendriticlength = [analysis.dendrite.totallength.values];
 totaldendriticlength = [totaldendriticlength mean(totaldendriticlength) std(totaldendriticlength) skewness(totaldendriticlength) kurtosis(totaldendriticlength) min(totaldendriticlength) max(totaldendriticlength)]';
-totaldendriticsurfacearea = [analysis.totalsurfacearea.values];
+
+totaldendriticsurfacearea = [analysis.dendrite.totalsurfacearea.values];
 totaldendriticsurfacearea = [totaldendriticsurfacearea mean(totaldendriticsurfacearea) std(totaldendriticsurfacearea) skewness(totaldendriticsurfacearea) kurtosis(totaldendriticsurfacearea) min(totaldendriticsurfacearea) max(totaldendriticsurfacearea)]';
-totaldendriticvolume = [analysis.totalvolume.values];
+
+totaldendriticvolume = [analysis.dendrite.totalvolume.values];
 totaldendriticvolume = [totaldendriticvolume mean(totaldendriticvolume) std(totaldendriticvolume) skewness(totaldendriticvolume) kurtosis(totaldendriticvolume) min(totaldendriticvolume) max(totaldendriticvolume)]';
-numbersegments = [analysis.numbersegments.values];
+
+numbersegments = [analysis.dendrite.numbersegments.values];
 numbersegments = [numbersegments mean(numbersegments) std(numbersegments) skewness(numbersegments) kurtosis(numbersegments) min(numbersegments) max(numbersegments)]';
-numberbifurcations = [analysis.numberbifurcations.values];
+
+numberbifurcations = [analysis.dendrite.numberbifurcations.values];
 numberbifurcations = [numberbifurcations mean(numberbifurcations) std(numberbifurcations) skewness(numberbifurcations) kurtosis(numberbifurcations) min(numberbifurcations) max(numberbifurcations)]';
-numberterminations = [analysis.numberterminations.values];
+
+numberterminations = [analysis.dendrite.numberterminations.values];
 numberterminations = [numberterminations mean(numberterminations) std(numberterminations) skewness(numberterminations) kurtosis(numberterminations) min(numberterminations) max(numberterminations)]';
-maxbranchorder = [analysis.maxbranchorder.values];    
+
+maxbranchorder = [analysis.dendrite.maxbranchorder.values];    
 maxbranchorder = [maxbranchorder mean(maxbranchorder) std(maxbranchorder) skewness(maxbranchorder) kurtosis(maxbranchorder) min(maxbranchorder) max(maxbranchorder)]';
 
 tableheadlabels{1} = 'Neuron #';
