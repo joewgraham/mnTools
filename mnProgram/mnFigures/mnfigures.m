@@ -161,6 +161,20 @@ if nargin == 1
     try taperratescatterplots(controlanalysis);
     catch exception; disp('       Failed to produce figure. 5/5'); end
     close all;
+
+    disp('    Summary Tables.');
+    try summarytable_ind(controlanalysis);
+    catch exception; disp('       Failed to produce table.'); end
+    try summarytable(controlanalysis);
+    catch exception; disp('       Failed to produce table.'); end
+
+    disp('    Primary Dendrite Table.');
+    try primarydendritetable(controlanalysis);
+    catch exception; disp('       Failed to produce table.'); end
+
+    disp('    Branch Order Table.');
+    try branchordertable(controlanalysis);
+    catch exception; disp('       Failed to produce table.'); end
     
 else
     disp('     Parameter Distribution Figures.');
@@ -313,23 +327,22 @@ else
     try taperratescatterplots(controlanalysis,testanalysis);
     catch exception; disp('       Failed to produce figure. 6/6'); end
     close all;
+
+    disp('    Summary Table.');
+    try summarytable(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce table.'); end
+
+    disp('    Primary Dendrite Table.');
+    try primarydendritetable(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce table.'); end
+
+    disp('    Branch Order Table.');
+    try branchordertable(controlanalysis,testanalysis);
+    catch exception; disp('       Failed to produce table.'); end
     
 end
 
 
-disp('    Summary Tables.');
-try summarytable_ind(controlanalysis);
-catch exception; disp('       Failed to produce table.'); end
-try summarytable(controlanalysis);
-catch exception; disp('       Failed to produce table.'); end
-
-disp('    Primary Dendrite Table.');
-try primarydendritetable(controlanalysis);
-catch exception; disp('       Failed to produce table.'); end
-
-disp('    Branch Order Table.');
-try branchordertable(controlanalysis);
-catch exception; disp('       Failed to produce table.'); end
 
 cd(mnhome);
 
